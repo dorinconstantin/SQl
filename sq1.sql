@@ -5,10 +5,9 @@ BEGIN TRANSACTION
         quantity int not null default 0
     );
 
-    INSERT INTO Inventory (item_name,quantity) VALUES
-        ('Clothes',0),
-        ('Magazines',0),
-        ('Accessories',0);
+    INSERT INTO Inventory (item_name,quantity) VALUES('Clothes',0)
+    INSERT INTO Inventory (item_name,quantity) VALUES ('Magazines',0)
+    INSERT INTO Inventory (item_name,quantity) VALUES('Accessories',0)
 
 
     CREATE TABLE  Items(
@@ -19,25 +18,23 @@ BEGIN TRANSACTION
     
     );
 
-       INSERT INTO Items ( name,price, item_type)  values
-        ('T-Shirt',5.66, 1),
-        ('Trousers', 12, 1),
-        ('Jacket', 2.44, 1),
-        ('Shoks', 5.5, 1),
-        ('Head-cap', 1.4, 1);
+       INSERT INTO Items ( name,price, item_type)  VALUES('T-Shirt',5.66, 1),
+       INSERT INTO Items ( name,price, item_type)  VALUES ('Trousers', 12, 1),
+       INSERT INTO Items ( name,price, item_type)  VALUES('Jacket', 2.44, 1),
+       INSERT INTO Items ( name,price, item_type)  VALUES ('Shoks', 5.5, 1),
+       INSERT INTO Items ( name,price, item_type)  VALUES ('Head-cap', 1.4, 1);
 
-        INSERT Items ( name,price, item_type)  values
-        ('Five Gear', 5.4, 2),
-        ('As', 3.66, 2),
-        ('Nw', 2.1, 2),
-        ('Zoo', 1.4, 2),
-        ('Zet', 3.4, 2);
-        INSERT INTO Items ( name,price, item_type)  values
-        ('Rings', 23, 3),
-        ('Bracelet', 33.66, 3),
-        ('Saphire-Rings', 33, 3),
-        ('Silver-rings', 7, 3),
-        ('Watch Strap', 9, 3);
+       INSERT INTO items ( name,price, type)  VALUES('Five Gear', 5.4, 2),
+       INSERT INTO items ( name,price, type)  VALUES ('As', 3.66, 2),
+       INSERT INTO items ( name,price, type)  VALUES ('Nw', 2.1, 2),
+       INSERT INTO items ( name,price, type)  VALUES('Zoo', 1.4, 2),
+       INSERT INTO items ( name,price, type)  VALUES ('Zet', 3.4, 2);
+       
+       INSERT INTO Items ( name,price, item_type) VALUES ('Rings', 23, 3)
+       INSERT INTO Items ( name,price, item_type) VALUES ('Bracelet', 33.66, 3)
+       INSERT INTO Items ( name,price, item_type) VALUES ('Saphire-Rings', 33, 3)
+       INSERT INTO Items ( name,price, item_type) VALUES ('Silver-rings', 7, 3)
+       INSERT INTO Items ( name,price, item_type) VALUES ('Watch Strap', 9, 3)
     
     CREATE TABLE Clothes(
         id int NOT NULL IDENTITY(1,1) primary key ,
@@ -45,12 +42,11 @@ BEGIN TRANSACTION
         size int,
         item_id int not null foreign key references items(id)
     );
-        INSERT INTO Clothes ( fabric, size, item_id) values
-                ('Cotton', 6, 1),
-                ('Linen', 7, 1),
-                ('Voile', 8, 1),
-                ('Organdie', 4, 1),
-                ('Tulle', 8, 1);
+        INSERT INTO Clothes ( fabric, size, item_id) VALUES('Cotton', 6, 1)
+         INSERT INTO Clothes ( fabric, size, item_id) VALUES       ('Linen', 7, 1)
+        INSERT INTO Clothes ( fabric, size, item_id) VALUES        ('Voile', 8, 1)
+         INSERT INTO Clothes ( fabric, size, item_id) VALUES       ('Organdie', 4, 1)
+         INSERT INTO Clothes ( fabric, size, item_id) VALUES       ('Tulle', 8, 1)
 
     CREATE TABLE Accessories(
         id int NOT NULL IDENTITY(1,1) primary key ,
@@ -58,24 +54,23 @@ BEGIN TRANSACTION
         item_id int not null foreign key references items(id)
     );
 
-    INSERT INTO Accessories (color, item_id)values
-    ('Yellow', 1),
-    ('Brown',2),
-    ('Green', 3),
-    ('Blue',4),
-    ('Orange',5);
+    INSERT INTO Accessories (color, item_id) VALUES('Yellow', 1),
+    INSERT INTO Accessories (color, item_id) VALUES('Brown',2),
+    INSERT INTO Accessories (color, item_id) VALUES('Green', 3),
+    INSERT INTO Accessories (color, item_id) VALUES('Blue',4),
+    INSERT INTO Accessories (color, item_id) VALUES('Orange',5);
+    
     CREATE TABLE Magazines(
         id int NOT NULL IDENTITY(1,1) primary key ,
         item_type varchar(255) default null,
         item_id int not null foreign key references items(id),
     );
 
-     INSERT INTO Magazines (item_type, item_id) VALUES
-        ('Comic', 7),
-        ('Drama',7),
-        ('Sport', 7),
-        ('Fashion',7),
-        ('News',7);
+     INSERT INTO Magazines (item_type, item_id) VALUES('Comic', 7),
+     INSERT INTO Magazines (item_type, item_id) VALUES   ('Drama',7),
+      INSERT INTO Magazines (item_type, item_id) VALUES  ('Sport', 7),
+     INSERT INTO Magazines (item_type, item_id) VALUES   ('Fashion',7),
+     INSERT INTO Magazines (item_type, item_id) VALUES   ('News',7);
 
    
 
